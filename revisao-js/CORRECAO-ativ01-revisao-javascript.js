@@ -1,7 +1,5 @@
 /*
-
    DADOS PARA O EXERCÍCIO
-
    nome;sigla;area;populacao
    Sergipe;SE;21915.08;2278308
    Alagoas;AL;27848.14;3322820
@@ -12,7 +10,6 @@
    Piauí;PI;251577.74;3264531
    Maranhão;MA;331937.45;7035055
    Bahia;BA;564733.18;14812617
-
 */
 
 let estadosNe = []
@@ -122,9 +119,7 @@ const densidadeDemog = (area, pop) => pop / area
       chame a arrow function criada em 2) e efetue o cálculo correspondente.
       Com o resultado do cálculo, crie uma propriedade chamada 'densidade
       demográfica' para cada objeto representando um Estado.
-
       Durante este mesmo loop, elimine a propriedade 'sigla' dos objetos.
-
 */
 
 for(let i = 0; i < estadosNe.length; i++) {
@@ -138,7 +133,6 @@ for(let i = 0; i < estadosNe.length; i++) {
 
 /* 4) Escreva uma arrow function que receba um objeto. Na função, use for..in
       para extrair as propriedades e seus valores e exibi-los com console.log().
-
 */
 
 const listaEstado = estado => {
@@ -170,7 +164,6 @@ for(let est of estadosNe) {
          deve ser inserido com unshift(), para manter a ordem alfabética. 
          O terceiro Estado (Rio Grande do Norte) deve ser inserido entre os dois 
          já existentes, e assim por diante.
-
 */
 
 let nomesUf = []

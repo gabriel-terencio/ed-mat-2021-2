@@ -1,24 +1,24 @@
-// Funçao tradicional com 1 parâmetro e
+// Função tradicional com 1 parâmetro e
 // 1 linha no corpo, com return
 function quadrado(x) {
     return x * x
 }
 
-//ARROW FUNCTION: forma "abreviada" de escrever funções em JS
+// ARROW FUNCTION: forma "abreviada" de escrever funções em JS
 
 // Arrow function equivalente
-// 1) A função é atribuida a uma variável ( ou ainda melhor, uma constante)
-// 2) Desaparece a palavra-chave "function" 
+// 1) A função é atribuída a uma variável (ou ainda melhor, a uma constante)
+// 2) Desaparece a palavra-chave "function"
 // 3) Desaparecem os parênteses em torno do parâmetro
 // 4) Entre o parâmetro e o corpo da função, temos o sinal "=>" (arrow, flecha)
 // 5) Desaparecem as chaves que delimitam o corpo da função
 // 6) Desaparece a palavra-chave "return"
-const quadrado2 = x => x *x
+const quadrado2 = x => x * x
 
 console.log(quadrado(7))
 console.log(quadrado2(7))
 
-console.log('-----------------------------------------------')
+console.log('------------------------------------------')
 
 // Função tradicional com 2 parâmetros, 1 linha de corpo com return
 function potencia(base, expoente) {
@@ -26,15 +26,15 @@ function potencia(base, expoente) {
 }
 
 // Arrow function correspondente
-// Retornam os parênteses em torno dos parâmetro
+// Retornam os parênteses em torno dos parâmetros
 const potencia2 = (base, expoente) => base ** expoente
 
 console.log(potencia(2, 5))
 console.log(potencia2(2, 5))
 
-console.log('----------------------------------------------------')
+console.log('------------------------------------------')
 
-//  Função tradicional sem parâmetros, 1 linha de corpo com return
+// Função tradicional sem parâmetros, 1 linha de corpo com return
 function dataHoraAtual() {
     return new Date()
 }
@@ -46,9 +46,9 @@ const dataHoraAtual2 = () => new Date()
 console.log(dataHoraAtual())
 console.log(dataHoraAtual2())
 
-console.log('----------------------------------------------------')
+console.log('------------------------------------------')
 
-// Função tradicional com 1 parâmetro e multiplas linhas de corpo
+// Função tradicional com 1 parâmetro e múltiplas linhas de corpo
 function fatorial(n) {
     let res = 1
     for(let i = n; i > 1; i--) res *= i
@@ -57,9 +57,9 @@ function fatorial(n) {
 
 // Arrow function correspondente
 // Retornam as chaves delimitando o corpo da função
-const fatorial2 = x => {
+const fatorial2 = n => {
     let res = 1
-    for(let i =n; i > 1; i--) res *=i
+    for(let i = n; i > 1; i--) res *= i
     return res
 }
 

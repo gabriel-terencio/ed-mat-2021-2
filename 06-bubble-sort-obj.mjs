@@ -1,13 +1,13 @@
+let pass, comps, trocas
+
 /*
-    fnComp() passará a função externa os dois elementos adjacentes  do vetor
+    fnComp() passará à função externa os dois elementos adjacentes do vetor
     e retornará:
     - true: se o primeiro elemento for maior que o segundo
     - false: caso contrário
 */
-let pass, comps, trocas
-
 function bubbleSort(vetor, fnComp) {
-    
+
     pass = 0, comps = 0, trocas = 0
 
     let trocou
@@ -16,38 +16,37 @@ function bubbleSort(vetor, fnComp) {
         pass++
         trocou = false
 
-        // Percurso for tradicional até a PENULTIMA posição do vetor
-        for(let i = 0; 1 < vetor.length - 1; i++) {
+        // Percurso for tradicional até a PENÚLTIMA posição do vetor
+        for(let i = 0; i < vetor.length - 1; i++) {
             comps++
-            //if(vetor[i] > vetor[i + 1]) {
+            // if(vetor[i] > vetor[i + 1]) {
             if(fnComp(vetor[i], vetor[i + 1])) {
                 // Efetua a troca entre os elementos por desestruturação
                 [ vetor[i], vetor[i + 1] ] = [ vetor[i + 1], vetor[i] ]
                 trocou = true
                 trocas++
-                
             }
         }
+
     } while(trocou)
 }
 
-import { objMotoristas } from './Data/motoristas-obj-desord.mjs'
+import { objMotoristas } from './data/motoristas-obj-desord.mjs'
 
 console.time('Tempo de ordenação')
 
 // Ordenando por nome_motorista
-// bubbleSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista > elem2.nome_motorista)
+//bubbleSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista > elem2.nome_motorista)
 
 // Ordenando por nome_motorista em ordem DECRESCENTE
 // bubbleSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista < elem2.nome_motorista)
 
 // Ordenando por nome_motorista em ordem DECRESCENTE ignorando acentos
-//bubbleSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista < elem2.nome_motorista.localeCompare(elem2,
-//nome_motorista, 'pt-br') <= 0)
+// bubbleSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista.localeCompare(elem2.nome_motorista, 'pt-br') <= 0)  // LEEEEENTO
 
-// Ordenação em dois níveis: primeiro por razão_social e depois por nome_motorista
+// Ordenação em dois níveis: primeiro por razao_social e depois por nome_motorista
 bubbleSort(objMotoristas, (elem1, elem2) => {
-    if(elem1.razao_social === elem2.razao_social) {  // Mesma empresa
+    if(elem1.razao_social === elem2.razao_social) {     // Mesma empresa
         // Desempate é feito pelo nome do motorista
         return elem1.nome_motorista > elem2.nome_motorista
     }
